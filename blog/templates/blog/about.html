@@ -1,0 +1,49 @@
+{% extends 'blog/base.html' %}
+{% block title %}Elison Eric - About Me{% endblock %}
+{% block content %}
+<header class="container d-flex align-items-center mb-5">
+    <div class="text-center">
+        <h1>Elison Eric</h1>
+        <p>Computer Science Student</p>
+    </div>
+</header>
+<main class="container mb-5">
+    <section class="about-me">
+        <h2>About</h2>
+        <p>Hi there! I'm Elison Eric, a passionate computer science student with a strong interest in web development, graphic design, and digital marketing. I'm constantly learning and striving to improve my skills in these areas.  I'm excited to use my knowledge to create innovative and user-friendly experiences.</p>
+        <button id="showSkillsBtn" class="btn btn-primary">Show Skills</button>
+        <ul id="skillsList" class="list-group mt-3" style="display: none;">
+            <li class="list-group-item">Web Development (HTML, CSS, JavaScript)</li>
+            <li class="list-group-item">Graphic Design (Photoshop, Illustrator)</li>
+            <li class="list-group-item">Digital Marketing (SEO, Social Media Marketing)</li>
+        </ul>
+    </section>
+    <section class="project" style="margin-top: 20px;">
+        <h2>Current Project</h2>
+        <p>This website is a project for my CSC 456 course, where I'm applying my skills to create a basic running personal blog app</p>
+    </section>
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to connect with me on LinkedIn or send me an email at <a href="mailto:elison.eric@aun.edu.ng">elison.eric@aun.edu.ng</a>.</p>
+        <ul class="social-links list-inline">  
+            <li class="list-inline-item"><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item"><a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a></li>
+        </ul>
+    </section>
+</main>
+
+<script>
+    const showSkillsBtn = document.getElementById('showSkillsBtn');
+    const skillsList = document.getElementById('skillsList');
+
+    showSkillsBtn.addEventListener('click', function() {
+        if (skillsList.style.display === 'none') {
+            skillsList.style.display = 'block';
+            showSkillsBtn.textContent = 'Hide Skills';
+        } else {
+            skillsList.style.display = 'none';
+            showSkillsBtn.textContent = 'Show Skills';
+        }
+    });
+</script>
+{% endblock %}

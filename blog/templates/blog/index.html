@@ -1,0 +1,67 @@
+<body>
+    {% extends 'blog/base.html' %}
+    {% block content %}
+    
+        <div class="jumbotron">
+            <h1 class="display-4">Simple. Elegant. Awesome.</h1>
+            <p class="lead">This blog dives into the world of education and beyond through the eyes of students. We explore academic challenges, career aspirations, campus life, and everything in between. Expect honest opinions, thought-provoking discussions, and a healthy dose of humor as we navigate the journey of learning and growth.</p>
+        
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="{% url 'about' %}" role="button">Learn more</a>
+            </p>
+        </div>
+    
+        
+        <div class="row" style="padding-bottom: 50px;">
+            {% for post in posts %}
+            <div class="col">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.content|truncatewords:30 }}</p>
+                        <a href="{% url 'post_detail' pk=post.pk %}" class="card-link">Read More</a>
+                    </div>
+                </div>
+            </div>  
+            {% endfor %}
+        </div>
+        
+        
+        <div class="row mt-sm-4 mt-md-0" style="padding-bottom: 50px;">
+            <div class="col-sm-12 col-md-8 text-sm-center text-md-left">
+                <h3 >About ME</h3>
+                <p class="lead">An about me and a brief note on AI</p>
+        
+                <p>Hi there! I'm Elison Eric, a passionate computer science student with a strong interest in web development, graphic design, and digital marketing. I'm constantly learning and striving to improve my skills in these areas.  I'm excited to use my knowledge to create innovative and user-friendly experiences.</p>
+
+                    <p>AI (Artificial Intelligence): Machines that can learn, solve problems, and make decisions – like a smart assistant. <br>
+
+Why You Might Choose It: AI is a rapidly growing field offering exciting challenges, real-world impact, and even creativity (think robots and art!).  It's a natural extension of your computer science skills and lets you build intelligent systems.</p>
+            </div>
+        
+            <div class="col-sm-12 col-md-4">
+                <h3 class="mb-4">Side Menu</h3>
+
+        <ul class="nav flex-column nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Top Stories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Student Gossip</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Updates</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Forex</a>
+            </li>
+        </ul>
+
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}
+
+</body>
+</html>
